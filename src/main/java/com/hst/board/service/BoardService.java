@@ -18,5 +18,21 @@ public class BoardService {
         boards.add(data);
         return boards;
     }
+
+    public Object detailBoard() {
+        return null;
+    }
+
+    public int insertBoard() {
+        return 1;
+    }
+
+    public int updateBoard() {
+        return 1;
+    }
+
+    public int deleteBoard() {
+        return 1;
+    }
     
 }
