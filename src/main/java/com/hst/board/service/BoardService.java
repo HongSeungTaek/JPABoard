@@ -4,12 +4,21 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
+import com.hst.board.dao.BoardDao;
+import com.hst.board.domain.Board;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
 @Service
 public class BoardService {
+    
+    @Autowired
+    BoardDao boardDao;
+
     public List<Object> getBoards() {
         List<Object> boards = new ArrayList<>();
         Map<String, Object> data = new HashMap<String, Object>();
@@ -19,20 +28,24 @@ public class BoardService {
         return boards;
     }
 
-    public Object detailBoard() {
+    public Board detailBoard(Integer id) {
+        Optional<Board> one = boardDao.findById(id);
+        if(one.isPresent()) {
+            return one.get();
+        }
         return null;
     }
 
-    public int insertBoard() {
-        return 1;
+    public void insertBoard(Board board) {
+        boardDao.save(board);
     }
 
-    public int updateBoard() {
-        return 1;
+    public void updateBoard(Board board) {
+        boardDao.save(board);
     }
 
-    public int deleteBoard() {
-        return 1;
+    public void deleteBoard(Integer id) {
+        boardDao.deleteById(id);
     }
     
 }
