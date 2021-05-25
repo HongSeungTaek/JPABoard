@@ -19,13 +19,8 @@ public class BoardService {
     @Autowired
     BoardDao boardDao;
 
-    public List<Object> getBoards() {
-        List<Object> boards = new ArrayList<>();
-        Map<String, Object> data = new HashMap<String, Object>();
-        data.put("id", 1);
-        data.put("name", "제목1");
-        boards.add(data);
-        return boards;
+    public List<Board> getBoards() {
+        return boardDao.findAll();
     }
 
     public Board detailBoard(Integer id) {
