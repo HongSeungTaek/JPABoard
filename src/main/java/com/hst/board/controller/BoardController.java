@@ -3,7 +3,7 @@ package com.hst.board.controller;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.hst.board.domain.Board;
+import com.hst.board.dao.Board;
 import com.hst.board.service.BoardService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ public class BoardController {
     @Autowired
     BoardService boardService;
 
-    @GetMapping("/api/boards")
+    @PostMapping("/api/boards")
     public ResponseEntity getBoard() {
         Map<String, Object> res = new HashMap<String, Object>();
         res.put("result", "ok");

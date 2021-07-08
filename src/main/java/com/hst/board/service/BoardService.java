@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import com.hst.board.dao.Board;
 import com.hst.board.dao.BoardDao;
-import com.hst.board.domain.Board;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
